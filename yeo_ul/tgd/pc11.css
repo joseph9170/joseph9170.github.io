@@ -1,0 +1,2583 @@
+/* :::::::::: :::::::::: :::::::::: :::::::::: 전역 설정 :::::::::: :::::::::: :::::::::: :::::::::: */
+
+/* 빠른 수정 🟢⚪⚫ */
+:root {
+    --url-banner: url(https://static-cdn.jtvnw.net/jtv_user_pictures/d02fc610-4d53-4886-a76b-f90bffa444e0-profile_image-300x300.png); /* 배너 */
+    --url-pfbar: url(https://cdn.discordapp.com/attachments/901132816996249601/936308122518163526/pfbar_basic.png); /* 프로필바 배너 : 1 2 */
+    --url-fulnoti: url(https://cdn.discordapp.com/attachments/901132816996249601/936675189096337499/darknoti.png); /* 풀사이즈형 공지 */
+    --url-hgdlogo: url(https://static-cdn.jtvnw.net/jtv_user_pictures/d02fc610-4d53-4886-a76b-f90bffa444e0-profile_image-300x300.png); /* 여게더 로고 */
+}
+
+/* 둘러보기 */
+html {
+    --color-bc: #EAEFF7;
+    --color-fr: #FFFFFF;
+
+    --color-noti: #D8DDE8;
+    --color-hot: #E5E9F0;
+    --color-hov: #F2F4F7;
+
+    --color-sig: #455168;
+    --color-pla: #7F8899;
+    
+	--color-lin: #337ab7;
+}
+
+html.darkmode {
+    --color-bc: #121212;
+    --color-fr: #1D1D1D;
+
+    --color-noti: #3A3A3A;
+    --color-hot: #313131;
+    --color-hov: #262626;
+    
+    --color-sig: #B59653;
+    --color-pla: #99917F; /* #B3A994 */ 
+
+    --color-lin: #B88533;
+}
+
+:root {
+    --color-sigr: #684545;
+    --color-sigy: #B59653;
+    --color-sigk: #1C1E21;
+
+    --color-ntb: #E7524C;
+    --color-eda: #1e88e5;
+
+    --font-pro: 'Fontawesome', 'Pretendard Variable';
+}
+
+
+/* 아웃라인 제거 */
+/* *:focus {
+    outline: none !important;
+} */
+
+:focus:not(:focus-visible) {
+    outline: 0 !important;
+}
+
+input:focus {
+	outline: none !important;
+}
+
+
+/* 폰트 🟢⚪ */
+* {
+    font-family: 'Pretendard Variable', sans-serif;
+}
+
+/* Pretendard - OpenType Beta */
+/* https://cactus.tistory.com/306 */
+/* https://helpx.adobe.com/kr/fonts/using/open-type-syntax.html */
+/* :root {
+    font-feature-settings: "calt", "salt", "ss01", "ss02", "ss03", "ss08";
+} */
+
+
+/* 배경 🟢⚪⚫ */
+html,
+html.darkmode {
+    background: linear-gradient(to top, #1C1E21, #1C1E21) #1C1E21;
+    height: auto;
+}
+
+body,
+html.darkmode body {
+    background: var(--color-bc);
+    /*background: transparent !important;*/
+
+    min-width: fit-content;
+}
+
+
+/* 하이퍼링크 텍스트형 버튼 🟢⚪⚫
+a,
+a:hover,
+a:focus,
+html.darkmode a,
+html.darkmode a:hover,
+html.darkmode a:focus {
+    color: var(--color-sig);
+}
+*/
+
+/* 하이퍼링크 텍스트형 버튼 대체 Beta */
+#lastc {
+    color: var(--color-sig);
+}
+
+
+/* :::::::::: :::::::::: :::::::::: :::::::::: 특수 효과 :::::::::: :::::::::: :::::::::: :::::::::: */
+
+/* 부드러운 스크롤링 🟢⚪ */
+:root {
+    scroll-behavior: smooth;
+}
+
+
+/* 드래그 이펙트 */
+::selection {
+    color: #fff;
+    background-color: #607090; /* Pass Contrast Ratio - 7.98:1 (over 4.5:1) */
+}
+
+
+/* 프로필바 배너 🟢⚪ */
+@keyframes banner {
+    from { background-position: center 0px; }
+    to { background-position: center -200px; } /* -(이미지 총 길이) */ /* $1 */
+}
+
+
+/* 스트리머 추천글 🟢⚪ */
+small.favo i.fa.fa-heart {
+    animation: heartbeat 1s infinite;
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    30% { transform: scale(1.25); }
+    42% { transform: scale(0.9); }
+    60% { transform: scale(1.15); }
+    85% { transform: scale(0.95); }
+    100% { transform: scale(1); }
+}
+
+
+/* 인기글 별 🟢⚪ */
+span.a-badge i.fa.fa-star { 
+	animation: rotation 3s infinite;
+}
+
+@keyframes rotation {
+	from { transform: rotate(0deg); } 
+    to { transform: rotate(360deg); }
+}
+
+
+
+
+/* :::::::::: :::::::::: :::::::::: :::::::::: 잡다한 기능 & 실험실 :::::::::: :::::::::: :::::::::: :::::::::: */
+
+/* 다크 : 풀사이즈형 공지 
+html.darkmode body:before {
+	content: '';
+
+	display: block;
+	height: 100vh;
+
+	background-image: var(--url-fulnoti);
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+*/
+
+/* 관리자 뱃지 전환 🟢⚪ */
+img[src="https://static-cdn.jtvnw.net/badges/v1/3267646d-33f0-4b17-b3df-f923a41db1d0/1"] {
+    content: url(https://cdn.discordapp.com/attachments/659060387718758401/666644717219348480/1.5.png);
+    width: 18px;
+}
+
+
+/* 상단 점프버튼 🟢⚪ */
+#movetotop {
+    top: 0;
+    margin: 0;
+    transform: translateX(calc(-1070px + 5px));
+
+    background: transparent;
+
+    width: calc(41.5px + 20px);
+    height: 45px;
+
+    z-index: 104;
+}
+
+#movetotop img {
+    display: none;
+}
+
+
+/* 버튼 일괄 옵션 🟢⚪ */
+.btn {
+    color: #fff !important;
+    background-color: var(--color-sig) !important;
+    border: 1px solid var(--color-sig) !important;
+    border-radius: 0px;
+
+    /* Beta - flex로 구현 */
+    display: inline-flex;
+    height: 30px;
+
+    align-items: center;
+    justify-content: center;
+    line-height: initial;
+
+    /* 초기화 */
+    padding: 5px 10px;
+    gap: 3px;
+}
+
+.btn:hover,
+.btn:focus {
+    color: var(--color-sig) !important;
+    background-color: var(--color-fr) !important;
+}
+
+
+/* 하이퍼링크 텍스트 색상 초기화 🟢⚪ */
+p a[href] {
+	color: var(--color-lin) !important;
+}
+
+
+/* 고정된 에디터 툴바 끄기 🟢⚪ */
+.fr-sticky-off,
+.fr-sticky-on {
+    z-index: 2 !important;
+    position: relative;
+}
+
+.fr-sticky-on + .fr-sticky-dummy,
+.fr-sticky-box > .fr-sticky-dummy {
+    display: none !important;
+}
+
+
+/* 본문 비디오 크기 최적화 Beta 🟢⚪ */
+/* https://thinkforthink.tistory.com/177 */
+.fr-view .fr-video.fr-dvb {
+	position: relative;
+	width: 100%;
+	padding-bottom: 56.25%; /* 16:9 */
+}
+
+#article-content-wrapper #article-content iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	
+	width: 100%;
+	height: 100%;
+
+	margin: 0;
+}
+
+
+/* 사이즈 오류 제거 Beta 🟢⚪ */
+footer,
+body > header,
+#content-area:before {
+    min-width: 1100px;
+}
+
+
+/* 광고 선택자 오류 제거 Beta 🟢⚫ */
+html.darkmode #article-list > div:nth-child(3) {
+	background: initial !important;
+}
+
+
+
+/* :::::::::: :::::::::: :::::::::: :::::::::: 헤더 :::::::::: :::::::::: :::::::::: :::::::::: */
+
+/* :::::::::: :::::::::: 1단 상단바 :::::::::: :::::::::: */
+
+/* 공통 */
+header {
+    padding: 0;
+}
+
+body > header:before {
+    content: '';
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    min-width: 1100px;
+    height: 40px;
+
+    background-color: var(--color-sigk);
+}
+
+/* 로고 */
+header .row > div:nth-child(1) > a > img {
+    content: url(https://cdn.discordapp.com/attachments/901132800793649233/936304107487129610/tgd_ico.png);
+    width: 25px;
+    height: 25px;
+}
+
+body > header > div:nth-child(1) > div > div.col-xs-4,
+body > header > div:nth-child(1) > div > div.col-xs-8 {
+    line-height: 35px;
+    height: 40px;
+}
+
+
+/* 전광판 */
+#header-top-notice {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 500px !important;
+    height: 40px !important;
+    line-height: 40px;
+    padding: 0 !important;
+    color: #b3b3b3 !important;
+}
+
+header #header-bar #header-top-notice a {
+    color: #b3b3b3 !important;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+header #header-bar #header-top-notice strong.notice-badge {
+    font-size: 0;
+	padding: 0;
+}
+
+/* header #header-bar #header-top-notice strong.notice-badge:after {
+    content: 'AD';
+    font-weight: 700;
+    font-size: 13px;
+	color: #b3b3b3;
+    background: #ffffff30;
+    padding: 1px 5px;
+    margin-right: 2px;
+} */
+
+
+/* 상단 검색 창 */
+header #right-search-form {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    width: calc(150px + 5px + 20px);
+    height: 40px;
+    
+    padding: 0 !important;
+}
+
+header #right-search-btn {
+    width: 20px;
+    height: 20px;
+
+    padding: 0px;
+}
+
+header #right-search-btn > i {
+    display: block;
+
+    font-size: 18px !important;
+    color: #fff
+}
+
+header #right-search-form > #right-search-input {
+    width: 0px;
+    height: 20px;
+
+    padding: 0px;
+    margin-right: 5px;
+
+    background: none;
+    border: none;
+    color: #fff;
+    opacity: 0;
+
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    text-align: right;
+    line-height: initial;
+
+    transition: width .3s .05s ease-out, opacity .4s ease-in-out;
+}
+
+header #right-search-form > #right-search-input::placeholder {
+	color: #b3b3b3 !important;
+}
+
+
+header #right-search-form:hover > #right-search-input,
+header #right-search-form > #right-search-input:focus {
+	width: 150px;
+	opacity: 1;
+}
+
+
+/* :::::::::: :::::::::: 2단 상단바 :::::::::: :::::::::: */
+
+/* 공통 🟢⚪ */
+header #header-bar {
+    margin: 0 auto;
+    width: 100%;
+    background: var(--color-sig);
+    position: sticky;
+    top: 0;
+    z-index: 102;
+}
+
+header #header-bar > .row {
+    display: flex;
+    justify-content: right;
+
+    width: 1070px;
+
+    margin: 0 auto;
+    padding: 0;
+
+    background: var(--color-sig) !important;
+    border: none !important;
+}
+
+
+/* 로고 🟢⚪ */
+header #header-bar > .row:before {
+    content: '';
+    background: var(--url-hgdlogo) no-repeat;
+    background-size: auto 30px;
+    background-position: left center;
+    width: 100%;
+}
+
+
+/* 버튼 영역 🟢⚪ */
+#header-menu-left,
+#header-menu-right {
+    display: inline-flex;
+    
+    float: none;
+    border: none !important;
+
+    width: auto;
+    height: 45px;
+    line-height: 45px;
+
+    margin-left: 50px;
+    padding: 0 !important;
+    gap: 50px;
+}
+
+
+/* 버튼 🟢⚪ */
+#latestDropdown,
+#favoriteDropdown,
+#playgroundDropdown,
+#header-menu-right .dropdown-toggle[href="/note/lists"],
+#userDropdown {
+    height: 45px;
+    width: 100px;
+
+    display: inline-flex !important;
+    justify-content: center;
+
+    padding: 0 !important;
+
+    font-size: 0;
+}
+
+
+/* 기존 개체 제거 🟢⚪ */
+#latestDropdown > i,
+#favoriteDropdown > i,
+#playgroundDropdown > i,
+.fa-envelope-o,
+#userDropdown > img,
+#latestDropdown > span,
+#favoriteDropdown > span,
+#playgroundDropdown > span,
+#userDropdown > span.caret,
+#header-menu-right > div:nth-child(1) > a > span.caret {
+	display: none;
+}
+
+
+/* 버튼 텍스트 🟢⚪ */
+#latestDropdown:before,
+#favoriteDropdown:before,
+#playgroundDropdown:before,
+#header-menu-right .dropdown-toggle[href="/note/lists"]:before,
+#userDropdown:before {
+    color: #fff;
+    font-weight: 500;
+    white-space: nowrap;
+    font-size: 14px;
+}
+
+#latestDropdown:before {
+	content: '최근 방문' !important;
+}
+
+#favoriteDropdown:before {
+	content: '즐겨찾기' !important;
+}
+
+#playgroundDropdown:before {
+	content: '놀이터' !important;
+}
+
+#header-menu-right .dropdown-toggle[href="/note/lists"]:before {
+    content: '내 쪽지함 ' !important;
+}
+
+#userDropdown:before {
+    content: '내 정보' !important;
+}
+
+
+/* 알림 뱃지 🟢⚪ */
+#note-notification-badge,
+#notification-badge {
+    height: 45px;
+    line-height: 45px;
+
+    font-size: 14px;
+    font-weight: 800;
+    font-family: 'Pretendard Variable';
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    background: none !important;
+    color: var(--color-ntb);
+
+    padding: 0 !important;
+    margin-left: 5px;
+    border-radius: 0 !important;
+}
+
+#note-notification-badge:before,
+#notification-badge:before {
+    content: '\f0f3';
+
+    font-size: 12px;
+    font-family: 'fontawesome';
+    color: var(--color-ntb);
+
+    position: relative;
+    top: -1px;
+}
+
+
+/* 미로그인 뱃지 🟢⚪ */
+#userDropdown > i:after {
+    content: ' \f235';
+
+    font-size: 14px;
+    font-family: 'fontawesome';
+    color: var(--color-ntb);
+
+    height: 45px;
+    line-height: 45px;
+}
+
+
+/* :::::::::: :::::::::: 배너 이미지 :::::::::: :::::::::: */
+
+/* 배너 🟢⚪ */
+body > header {
+    height: 290px;
+    background-image: var(--url-banner);
+    background-repeat: no-repeat;
+    background-color: #0e1120;
+    background-position: top center;
+    position: sticky;
+    top: -245px;
+    z-index: 103;
+}
+
+
+/* :::::::::: :::::::::: :::::::::: :::::::::: 트게더 좌측 메뉴 :::::::::: :::::::::: :::::::::: :::::::::: */
+
+/* 공통 🟢⚪ */
+#main .menu-wrapper {
+	background: var(--color-fr) !important;
+    border: 1px solid var(--color-sig) !important;
+}
+
+
+/* 메뉴 헤더 🟢⚪⚫ */
+#main .menu-wrapper > .header,
+html.darkmode #main .menu-wrapper > .header {
+	background: var(--color-sig);
+}
+
+
+/* 메뉴 버튼 🟢⚪⚫ */
+#main .menu-wrapper > a, 
+#main .menu-wrapper #fav-shortcut-area > a,
+html.darkmode #main .menu-wrapper > a, 
+html.darkmode #main .menu-wrapper #fav-shortcut-area > a {
+    background: transparent;
+	border-bottom: none;
+	padding: 0.35em 0.5em 0.35em 0.5em;
+    letter-spacing: -0.04em;
+}
+
+
+/* 메뉴 버튼 접촉 🟢⚪⚫ */
+#main .menu-wrapper > a:hover,
+#main .menu-wrapper > a:focus {
+    background-color: var(--color-hov) !important;
+}
+
+
+/* 메뉴 버튼 분리선 🟢⚪⚫ */
+#main .menu-wrapper .spacer,
+html.darkmode #main .menu-wrapper .spacer {
+    background: var(--color-sig);
+    height: 1px;
+}
+
+
+/* 단축키 정보 🟢⚪⚫ */
+#main .menu-wrapper > a > em, 
+#main .menu-wrapper #fav-shortcut-area > a > em,
+html.darkmode #main .menu-wrapper > a > em, 
+html.darkmode #main .menu-wrapper #fav-shortcut-area > a > em {
+    color: var(--color-sig);
+}
+
+
+/* 고정 즐겨찾기 🟢⚪⚫ */
+#main .menu-wrapper #fav-shortcut-area > a,
+html.darkmode #main .menu-wrapper #fav-shortcut-area > a {
+    background: var(--color-pla);
+    color: #fff;
+    border: 0;
+}
+
+
+/* 고정 즐겨찾기 별 🟢⚪⚫ */
+#fav-shortcut-area > a > em > i {
+    width: 20px;
+    color: #fff !important;
+}
+
+
+/* 고정 즐겨찾기 접촉 🟢⚪⚫ */
+#main .menu-wrapper #fav-shortcut-area > a:hover,
+#main .menu-wrapper #fav-shortcut-area > a:focus,
+html.darkmode #main .menu-wrapper #fav-shortcut-area > a:hover,
+html.darkmode #main .menu-wrapper #fav-shortcut-area > a:focus {
+    background: var(--color-sig);
+}
+
+
+
+
+/* :::::::::: :::::::::: :::::::::: :::::::::: 광고 :::::::::: :::::::::: :::::::::: :::::::::: */
+
+/* 상단 광고 - 메인 🟢⚪⚫ */
+#article-list > div:nth-child(3):not(#article-list>.article-list-row, #article-list-menu),
+html.darkmode #article-list > div:nth-child(3):not(#article-list>.article-list-row, #article-list-menu) {
+    width: 844px;
+    background: var(--color-noti) !important;
+    width: 100%;
+
+    border: none;
+}
+
+/* 상단 광고 - 내부 🟢⚪ */
+#main-content > div > div:nth-child(2):not(#article-list) {
+    background: var(--color-noti) !important;
+    padding: 10px 8px !important;
+}
+
+#main-content > div > div:nth-child(2) > div:not(#article-list-category, .article-list-table-gallery, #article-list-menu) {
+    background: var(--color-noti) !important;
+}
+
+
+/* 측면 광고 🟢⚪⚫ */
+#main-menu div[align="center"][style="background:#fff;padding:10px 0;"] {
+	background: var(--color-noti) !important;
+}
+
+
+
+
+/* :::::::::: :::::::::: :::::::::: :::::::::: 특수 영역 :::::::::: :::::::::: :::::::::: :::::::::: */
+
+/* 트게더 알림 팝업 배너 */
+#content-area > .container:not(#main) {
+	position: fixed;
+	z-index: 3;
+	
+	top: -1px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.alert {
+	border-radius: 0px 0px 20px 20px;
+}
+
+
+/* 메인 프레임 */
+#main-content > div.frame{
+    border: none !important;
+    background: var(--color-fr) !important;
+}
+
+
+/* :::::::::: :::::::::: :::::::::: :::::::::: 게시글 목록 :::::::::: :::::::::: :::::::::: :::::::::: */
+
+/* :::::::::: :::::::::: 게시글 목록 - 공통 :::::::::: :::::::::: */
+
+#article-list {
+    /* background: var(--color-fr); */
+
+    margin: 0;
+    padding: 15px;
+}
+
+/* 읽은 글 색상 */
+#article-list > .article-list-row > .item > .list-title > a:visited {
+    color: #acacac !important;
+}
+
+
+/* 추천 수 🟢⚪⚫ */
+#article-list > .article-list-row > .item > .list-header > span,
+html.darkmode #article-list > .article-list-row > .item > .list-header > span {
+    color: var(--color-sig);
+    background: transparent !important;
+    font-size: 14px;
+}
+
+/* 추천 수 0 🟢⚪ */
+#article-list > .article-list-row > .item > .list-header.v0 > span {
+    visibility: hidden;
+}
+
+
+/* 댓글 수 🟢⚪⚫ */
+#article-list > .article-list-row > .item > .list-title > small.comment-count,
+html.darkmode #article-list > .article-list-row > .item > .list-title > small.comment-count {
+    color: var(--color-sig);
+}
+
+
+/* 작성자 영역 🟢⚪ */
+#article-list > .article-list-row > .item > .list-title > .list-writer {
+    padding: 0 16px;
+    border-left: none !important;
+}
+
+#article-list > .article-list-row > .item > .list-title > .list-writer > span {
+    width: fit-content !important;
+    height: 18px;
+}
+
+/* 작성자 닉네임 🟢⚪⚫ */
+#article-list > .article-list-row > .item > .list-title > .list-writer.logged > span,
+html.darkmode #article-list > .article-list-row > .item > .list-title > .list-writer.logged > span  {
+    color: var(--color-sig);
+}
+
+/* 글 목록 🟢⚪⚫ */
+#article-list > .article-list-row,
+html.darkmode #article-list > .article-list-row {
+    border: none !important;
+    transition: 0.2s;
+}
+
+#article-list > .article-list-row > .item > .list-header {
+    border-left: none !important;
+}
+
+#article-list > .article-list-row > .item > .list-checkbox, 
+#article-list > .article-list-row > .item > .list-header, 
+#article-list > .article-list-row > .item > .list-category, 
+#article-list > .article-list-row > .item > .list-title,
+#article-list > .article-list-row > .item > .list-title > .list-category,
+#article-list > .article-list-row > .item > .list-title > .list-writer,
+#article-list > .article-list-row > .item > .list-blocked, 
+#article-list > .article-list-row > .item > .list-time {
+    border-color: var(--color-hot) !important;
+}
+
+/* 선택된 게시글 🟢⚪⚫ */
+#article-list > .article-list-row.active,
+html.darkmode #article-list > .article-list-row.active {
+    background-color: var(--color-hot);
+}
+
+
+/* 게시글 접촉 */
+#article-list > .article-list-row:hover,
+#article-list > .article-list-row:focus,
+html.darkmode #article-list > .article-list-row:hover,
+html.darkmode #article-list > .article-list-row:focus  {
+    background-color: var(--color-hov) !important;
+    transition: 0.2s;
+}
+
+
+/* :::::::::: :::::::::: 게시글 목록 - 공지/인기글 :::::::::: :::::::::: */
+
+#article-list > .article-list-row.notice > .item > .list-header > strong,
+#article-list > .article-list-row.hot > .item > .list-header > strong,
+#article-list > .article-list-row.notice > .item > .list-header > b,
+#article-list > .article-list-row.hot > .item > .list-header > b {
+    font-size: 0px;
+}
+
+/* 공지글 아이콘 */
+#article-list > .article-list-row.notice > .item > .list-header > strong:after,
+#article-list > .article-list-row.notice > .item > .list-header > b:after {
+    font-family: 'fontawesome';
+    font-size: 14px;
+    color: var(--color-sig);
+    content: '\f08d'; /* 압정 */
+}
+
+/* 인기글 아이콘 */
+#article-list > .article-list-row.hot > .item > .list-header > strong:after,
+#article-list > .article-list-row.hot > .item > .list-header > b:after {
+    font-family: 'fontawesome';
+    font-size: 13px;
+    color: #efc839;
+    content: '\f005'; /* 별 */
+}
+
+
+/* 공지글 디자인 */
+#article-list > .article-list-row.notice,
+html.darkmode #article-list > .article-list-row.notice {
+    background-color: var(--color-noti);
+}
+
+#article-list > .article-list-row.notice > .item > .list-title > small.comment-count,
+#article-list > .article-list-row.notice > .item > .list-title > .list-writer {
+    display: none;
+}
+
+#article-list > .article-list-row.notice > .item > .list-checkbox,
+#article-list > .article-list-row.notice > .item > .list-header,
+#article-list > .article-list-row.notice > .item > .list-category,
+#article-list > .article-list-row.notice > .item > .list-title,
+#article-list > .article-list-row.notice > .item > .list-blocked,
+#article-list > .article-list-row.notice > .item > .list-time {
+    border-bottom: none !important;
+}
+
+#article-list > .article-list-row.notice > .item > .list-title {
+    padding: 5px 0;
+}
+
+
+/* 공지글 말머리 */
+#article-list > .article-list-row.notice .list-title > span > i:before {
+    content: "공지";
+
+    font-family: 'Pretendard Variable';
+    font-size: 13px;
+    line-height: 18px;
+
+    background: var(--color-sig);
+    border: 2px solid var(--color-sig);
+    color: #fff;
+
+    padding: 0 4px;
+}
+
+#article-list > .article-list-row.notice > div > div.list-title > span.a-badge {
+    width: 50px;
+    margin-right: 0;
+}
+
+
+/* 공지글 작성 시각 */
+#article-list > .article-list-row.notice > .item > .list-time {
+    font-family: 'Pretendard Variable';
+    font-size: 12px;
+    line-height: 19px;
+
+    float: right;
+    right: 5px;
+
+    width: 60px;
+    height: 19px;
+    margin: 5px 0px;
+
+    background: var(--color-pla);
+    border: 1px solid var(--color-pla) !important;
+    color: #fff;
+}
+
+#article-list > .article-list-row.notice > .item > .list-time:after {
+    content: "\f017";
+    font-family: 'fontawesome';
+}
+
+
+/* 인기글 디자인 */
+#article-list > .article-list-row.hot,
+html.darkmode #article-list > .article-list-row.hot {
+    background-color: var(--color-hot);
+}
+
+
+/* 공지글 표시 버튼 */
+#article-list #article-option-area {
+	z-index: 1;
+}
+
+#article-list #article-option-area > #article-option-area-toggle-btn {
+    width: 25px;
+    height: 25px;
+
+    margin: 5px 5px 0 0;
+    line-height: initial;
+
+    background: var(--color-hov);
+    color: var(--color-sig);
+    border: 1px solid;
+}
+
+#article-option-area-toggle-btn > .fa-eye:before {
+    content: "\f205";
+}
+
+#article-option-area-toggle-btn > .fa-eye-slash:before {
+    content: "\f204";
+}
+
+/* :::::::::: :::::::::: 게시글 목록 - 카테고리 선택바 :::::::::: :::::::::: */
+
+/* 가로형 카테고리 선택바 */
+#board-home-link-btn {
+    height: 34px;
+}
+
+#article-list #article-list-category > a.active,
+#article-list #article-list-category > a:hover,
+#article-list #article-list-category > a:focus {
+    background: var(--color-sig) !important;
+    color: #fff !important;
+
+    transition: all .2s ease-in-out;
+}
+
+#article-list #article-list-category,
+html.darkmode #article-list #article-list-category {
+    border: 0;
+    background: var(--color-fr) !important;
+    border-bottom: 2px solid var(--color-sig);
+    height: fit-content;
+}
+
+#article-list #article-list-category > a,
+html.darkmode #article-list #article-list-category > a {
+    background: var(--color-fr);
+    border: none !important;
+}
+
+/* 세로형 카테고리 선택바 */
+@media (min-width: 1400px) {
+
+    /* 그리드화 */
+    #article-list {
+	    display: grid;
+	    grid-template-rows: 0px;
+    }
+
+    /* 갤러리 예외 : 불완전 */
+    #article-list > .article-list-table-gallery {
+        margin-top: 36px;
+    }
+
+    /* 진입 시 글 목록 예외 */
+    #article-info ~ #article-list {
+        display: block;
+    }
+
+    #article-list #article-list-category.can-float,
+    html.darkmode #article-list #article-list-category.can-float {
+        position: sticky;
+
+        top: 70px;
+        z-index: 1;
+        margin: 0;
+        margin-top: 0;
+        padding: 0;
+
+        width: 100px;
+        height: fit-content;
+
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        border-radius: 0;
+        border: 0;
+        box-shadow: none;
+
+        /* transform: translateX(calc(877px - 15px)) rotate(0deg); */
+        /* 근사 : (Round 866.66px) - (article-list padding L) */
+
+        transform: translate(calc(1070px * 0.8333333333 - 15px - 15px)) rotate(0deg);
+        /* 수치 : (xs-10 = 1070px * 83.33...%) - (xs-10 Padding L) - (article-list padding L) */
+
+        background: transparent !important;
+
+        max-height: 370px;
+        overflow-y: auto;
+    }
+
+    #article-list #article-list-category.can-float > a,
+    html.darkmode #article-list #article-list-category.can-float > a {
+        width: 85%;
+        padding: 10px;
+        border: 0;
+        border-radius: 0px;
+
+        display: flex;
+        justify-content: end;
+
+        transition: all .2s ease-in-out;
+
+        background: var(--color-fr);
+        border-right: 4px solid !important;
+    }
+
+
+    /* 홈 카테고리 */
+    #article-list #article-list-category.can-float > a[id=board-home-link-btn],
+    html.darkmode #article-list #article-list-category.can-float > a[id=board-home-link-btn] {
+        background: var(--color-sig) !important;
+        color: #fff !important;
+        border-right: 4px solid var(--color-sig) !important;
+        width: 100%;
+    }
+
+
+    /* 접촉 카테고리 */
+    #article-list #article-list-category.can-float > a.active,
+    #article-list #article-list-category.can-float > a.active[id=board-home-link-btn],
+    #article-list #article-list-category.can-float > a:hover,
+    #article-list #article-list-category.can-float > a:focus,
+    html.darkmode #article-list #article-list-category.can-float > a.active,
+    html.darkmode #article-list #article-list-category.can-float > a.active[id=board-home-link-btn],
+    html.darkmode #article-list #article-list-category.can-float > a:hover,
+    html.darkmode #article-list #article-list-category.can-float > a:focus {
+        background: var(--color-sig) !important;
+        width: 100%;
+        color: #fff !important;
+        border-right: 4px solid var(--color-sig) !important;
+    }
+}
+
+
+
+
+
+/* :::::::::: :::::::::: 게시글 목록 - 페이지 선택 버튼 :::::::::: :::::::::: */
+
+.pagination {
+    height: 30px;
+    border-radius: 0;
+}
+
+.pagination > li > a,
+.pagination > li > span,
+html.darkmode .pagination > li > a,
+html.darkmode .pagination > li > span {
+    border: 0 !important;
+    border-top: 1px solid var(--color-sig) !important;
+    border-bottom: 1px solid var(--color-sig) !important;
+
+    background: var(--color-sig);
+    color: #fff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 5px 10px;
+
+    min-width: 30px;
+    height: 100%;
+
+    font-weight: 600 !important;
+    line-height: 15px !important;
+}
+
+
+/* 첫 - 끝 버튼 설정 */
+.pagination > li > a:first-child,
+.pagination > li > span:first-child,
+html.darkmode .pagination > li > a:first-child,
+html.darkmode .pagination > li > span:first-child {
+    border-left: 1px solid var(--color-sig) !important;
+    border-radius: 0;
+}
+
+.pagination > li > a:last-child,
+.pagination > li > span:last-child,
+html.darkmode .pagination > li > a:last-child,
+html.darkmode .pagination > li > span:last-child {
+    border-right: 1px solid var(--color-sig) !important;
+    border-radius: 0;
+}
+
+
+/* 비활성화 버튼 접촉 */
+.pagination > li > a:hover,
+.pagination > li > a:focus,
+.pagination > li > span:hover,
+.pagination > li > span:focus,
+html.darkmode .pagination > li > a:hover,
+html.darkmode .pagination > li > a:focus,
+html.darkmode .pagination > li > span:hover,
+html.darkmode .pagination > li > span:focus {
+    color: var(--color-sig);
+    background: var(--color-fr);
+}
+
+
+/* 활성화 버튼 접촉 */
+.pagination > .active > a,
+.pagination > .active > a:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span,
+.pagination > .active > span:hover,
+.pagination > .active > span:focus,
+html.darkmode .pagination > .active > a,
+html.darkmode .pagination > .active > a:hover,
+html.darkmode .pagination > .active > a:focus,
+html.darkmode .pagination > .active > span,
+html.darkmode .pagination > .active > span:hover,
+html.darkmode .pagination > .active > span:focus {
+    color: var(--color-sig);
+    background: var(--color-fr);
+}
+
+
+
+
+
+/* :::::::::: :::::::::: 게시글 목록 - 검색 창 :::::::::: :::::::::: */
+
+/* 입력 창 🟢⚪⚫ */
+#article-list #boardSearchForm .form-control,
+html.darkmode #article-list #boardSearchForm .form-control {
+    height: 30px !important;
+
+    background: var(--color-fr) !important;
+    color: var(--color-sig);
+    box-shadow: none;
+
+    border: none;
+    border-top: 1px solid var(--color-sig);
+    border-bottom: 1px solid var(--color-sig);
+}
+
+#article-list #boardSearchForm .form-control::placeholder,
+html.darkmode #article-list #boardSearchForm .form-control::placeholder {
+    color: var(--color-pla) !important;
+}
+
+#article-list #boardSearchForm .form-control:focus {
+    z-index: 2;
+}
+
+/* 검색 버튼 🟢⚫ */
+html.darkmode .input-group-btn i.fa-search {
+    color: #fff;
+}
+
+
+
+
+
+/* :::::::::: :::::::::: :::::::::: :::::::::: 글 내부 :::::::::: :::::::::: :::::::::: :::::::::: */
+
+/* :::::::::: :::::::::: 글 내부 - 헤더 :::::::::: :::::::::: */
+
+/* 공통 */
+#article-info {
+    display: flex;
+    flex-direction: column-reverse;
+
+    margin-top: 0.5em;
+    padding: 2em 2em 0 2em;
+
+    border: 0;
+    border-bottom: 0;
+}
+
+#article-content-wrapper #article-content,
+html.darkmode #article-content-wrapper #article-content {
+    margin: 1em;
+    border: none;
+}
+
+
+/* 글 제목 */
+#article-info > h2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    font-size: 28px;
+    letter-spacing: -0.04em;
+    font-weight: 800;
+
+    width: 100%;
+    height: auto;
+
+    margin: 0 !important;
+}
+
+/* 글 카테고리 */
+#article-info > h2 > span {
+    width: fit-content;
+    border: none !important;
+
+    font-weight: 700;
+    font-size: 20px;
+
+    margin-bottom: 3px;
+}
+
+
+/* 작성자 정보 영역 */
+#article-info #article-info-writer {
+    display: flex;
+    height: 35px;
+
+    font-size: 15px;
+    letter-spacing: -0.04em;
+    line-height: 20px;
+    color: hsl(0 0% 40% / 1);
+
+    margin-left: calc(35px + 5px); /* 작성자 이미지 크기 + 여백 */
+    margin-bottom: 10px;
+    padding: 7.5px 0;
+}
+
+/* 작성자 닉네임 */
+#article-info-writer > strong {
+    margin-right: 1px;
+}
+
+/* 작성자 뱃지 */
+#article-info-writer > img {
+    margin-left: 3px;
+    width: 20px;
+
+    order: 1; /* 후순위 */
+}
+
+/* 작성자 이미지 */
+#article-info .article-profile-img {
+    width: 35px;
+    height: 35px;
+
+    border: 2px solid var(--color-sig);
+    border-radius: 100px;
+
+    top: 2em;
+    left: 2em;
+}
+
+/* 글 정보 영역 🟢⚪*/
+#article-content-wrapper > .header,
+html.darkmode #article-content-wrapper > .header {
+    padding: .5em 0;
+    margin: 0 2em 1em;
+
+    border-top: 0 !important;
+    border-bottom: 2px solid var(--color-sig);
+
+    background: transparent;
+
+    display: flex;
+	justify-content: flex-end;
+	gap: 3px;
+}
+
+/* 글 정보 값 🟢⚫ */
+#article-content-wrapper > .header > span {
+	padding: 0 7px !important;
+	height: 18px;
+	line-height: 18px;
+	
+	border-radius: 10px;
+	letter-spacing: -0.02em;
+	
+    background: var(--color-pla);
+	color: #fff;
+}
+
+#article-content-wrapper > .header > #article-time {
+	margin-right: auto;
+}
+
+#article-content-wrapper > .header > #article-comment a {
+    color: #fff;
+}
+
+
+/* :::::::::: :::::::::: 글 내부 - 본문 :::::::::: :::::::::: */
+
+#article-content-wrapper {
+    padding: 0;
+    /* background: var(--color-fr); */
+    border: 0;
+}
+
+/* 글 라인 색상 🟢⚫ */
+html.darkmode #article-content p, 
+html.darkmode #article-content span {
+    background: var(--color-fr) !important;
+}
+
+/* :::::::::: :::::::::: 글 내부 - 추천 버튼 :::::::::: :::::::::: */
+
+/* 추천 버튼 영역 */
+#article-content-wrapper > .vote-area,
+html.darkmode #article-content-wrapper > .vote-area {
+    padding: 1em 0.8em;
+    border: 0;
+}
+
+/* 추천 버튼 */
+#article-content-wrapper > div.vote-area > button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 0px;
+
+    width: 75px;
+    height: 75px;
+    border-radius: 200px;
+
+    margin: 0 auto;
+}
+
+#article-content-wrapper > div.vote-area > button > i {
+    font-size: 22px !important;
+}
+
+#up {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+#up:before {
+    content: '추천';
+
+    font-weight: 400;
+    letter-spacing: -0.04em;
+
+    margin-right: 2px;
+}
+
+
+/* :::::::::: :::::::::: 글 내부 - 글 기능 버튼 :::::::::: :::::::::: */
+
+#article-content-wrapper > div.footer,
+html.darkmode #article-content-wrapper > div.footer {
+    padding: 0.75em 1.5em;
+    background: var(--color-noti);
+    border: 0;
+}
+
+
+/* :::::::::: :::::::::: 글 내부 - 인접 글 목록 :::::::::: :::::::::: */
+
+#article-neighbor-list {
+    padding: .5em 0;
+
+    border: 0;
+    background: var(--color-noti);
+}
+
+#article-neighbor-list > div:hover,
+#article-neighbor-list > div:focus {
+    background: var(--color-hov);
+}
+
+#article-neighbor-list > div > span.indicator,
+#article-neighbor-list > div > span.author {
+    color: var(--color-sig);
+}
+
+#article-neighbor-list > div > span.indicator {
+    padding-left: 1em;
+}
+
+#article-neighbor-list > div > span.author {
+    padding-right: 1em;
+}
+
+
+
+/* :::::::::: :::::::::: 글 내부 - 댓글 :::::::::: :::::::::: */
+
+#article-reply-area {
+    padding: 0;
+    border: 0;
+    margin-top: 2em;
+    margin-bottom: 2em;
+
+	background: var(--color-fr);
+}
+
+
+/* 실제 댓글 영역 */
+#article-reply-area #reply-real-area, 
+#article-reply-area #reply-best-area {
+	padding: 0 1.5em;
+}
+
+
+/* 댓글 영역 헤더 */
+#article-reply-area>.header {
+    padding: 0;
+    padding: 0 1.5em;
+    margin-bottom: 1em;
+}
+
+#article-reply-area > .header h5 {
+    color: var(--color-sig) !important;
+    display: flex;
+    font-size: 0;
+    gap: 1.5px;
+    font-weight: 800;
+}
+
+/* 헤더 댓글 아이콘 */
+#article-reply-area > .header h5 > .fa-commenting:before {
+    content: '\f0e6';
+    font-size: 20px;
+}
+
+/* 헤더 댓글 수 */
+#totalCommentCount {
+    font-size: 20px;
+    letter-spacing: -0.04em;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/* 헤더 수평선 */
+#totalCommentCount:after {
+	margin-left: calc(10px + 1.5px);
+    content: '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━';
+    font-size: 20px;
+    letter-spacing: -0.04em;
+}
+
+/* 마지막 댓글로 이동 버튼 */
+#lastc {
+    font-size: 0px;
+    text-align: end;
+    margin-left: auto;
+    text-decoration: none;
+}
+
+#lastc:after {
+	margin-left: 10px;
+    content: '\f103';
+    font-family: 'fontawesome';
+    font-size: 20px;
+}
+
+
+/* 댓글 개체 */
+#article-reply-area #reply-real-area .reply,
+#article-reply-area #reply-best-area .reply,
+html.darkmode #article-reply-area #reply-real-area .reply,
+html.darkmode #article-reply-area #reply-best-area .reply {
+    border: 0;
+}
+
+
+/* 댓글 정보 영역 */
+#article-reply-area #reply-real-area .reply > .reply-header,
+#article-reply-area #reply-best-area .reply > .reply-header,
+html.darkmode #article-reply-area #reply-real-area .reply > .reply-header,
+html.darkmode #article-reply-area #reply-best-area .reply > .reply-header {
+    display: grid;
+    grid-template-columns: 2.5em 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    column-gap: 3px;
+
+    justify-content: center;
+    align-items: end;
+
+    background: transparent;
+    border: 0;
+
+    padding: 0;
+    padding-bottom: 0.3em;
+}
+
+/* 댓글 작성자 이미지 */
+#article-reply-area #reply-real-area .reply > .reply-header > .reply-writer-image,
+#article-reply-area #reply-best-area .reply > .reply-header > .reply-writer-image {
+    border: 2px solid var(--color-sig);
+    width: 2.5em;
+    height: 2.5em;
+
+    grid-row: 1 / 3;
+}
+
+/* 원 글쓴이 or 비로그인 코드 */
+#article-reply-area #reply-real-area .reply > .reply-header > small.code,
+#article-reply-area #reply-best-area .reply > .reply-header > small.code {
+    font-size: 10px;
+    padding: 0;
+}
+
+/* 댓글 작성자 */
+#article-reply-area #reply-real-area .reply > .reply-header > .reply-writer.logged,
+#article-reply-area #reply-best-area .reply > .reply-header > .reply-writer.logged {
+    display: flex;
+    flex-direction: row-reverse;
+
+    vertical-align: bottom;
+    align-items: center;
+    line-height: 20px;
+    font-size: 15px;
+
+    padding: 0 !important;
+    grid-row: 2 / 3;
+    width: fit-content !important;
+
+	color: var(--color-sig) !important;
+}
+
+/* 댓글 작성자 뱃지 */
+#article-reply-area #reply-real-area .reply > .reply-header > .reply-writer.logged > img,
+#article-reply-area #reply-best-area .reply > .reply-header > .reply-writer.logged > img {
+    margin-left: 3px;
+    width: 15px;
+    height: 15px
+}
+
+/* 댓글 메뉴 */
+#article-reply-area #reply-real-area .reply > .reply-header > .reply-menu,
+#article-reply-area #reply-best-area .reply > .reply-header > .reply-menu {
+    padding: 0;
+
+    grid-row: 2 / 3;
+
+    text-align: right;
+}
+
+
+/* 댓글 본문 */
+#article-reply-area #reply-real-area .reply > .reply-content,
+#article-reply-area #reply-best-area .reply > .reply-content {
+    margin-left: 1.1em;
+    border-left: 2px solid var(--color-sig);
+    background: var(--color-hot);
+}
+
+
+/* 선택된 댓글 */
+#article-reply-area #reply-real-area .reply.active,
+#article-reply-area #reply-best-area .reply.active,
+html.darkmode #article-reply-area #reply-real-area .reply.active,
+html.darkmode #article-reply-area #reply-best-area .reply.active {
+	background-color: transparent !important;
+}
+
+#article-reply-area #reply-real-area .reply.active > .reply-content,
+#article-reply-area #reply-best-area .reply.active > .reply-content,
+html.darkmode #article-reply-area #reply-real-area .reply.active > .reply-content,
+html.darkmode #article-reply-area #reply-best-area .reply.active > .reply-content {
+    background: var(--color-pla); /* #eff1f5 - Split Complementary E */
+}
+
+/* 댓글 기능 🟢⚫ */
+html.darkmode #article-reply-area #reply-real-area .reply>.reply-header>.reply-menu a, 
+html.darkmode #article-reply-area #reply-best-area .reply>.reply-header>.reply-menu a {
+	color: var(--color-sig);
+}
+
+
+
+
+
+/* :::::::::: :::::::::: :::::::::: :::::::::: 프로필바 :::::::::: :::::::::: :::::::::: :::::::::: */
+
+/* :::::::::: :::::::::: 프로필바 - 디자인 :::::::::: :::::::::: */
+
+/* 바탕 */
+#content-area:before {
+    content: "";
+    width: 100%;
+
+	background-image: var(--url-pfbar);
+	background-repeat: no-repeat;
+	background-color: var(--color-sig);
+
+	animation: banner 2s steps(2) infinite; /* 이름 전환간격 전환개수 반복횟수 */ /* $2 */
+
+    position: absolute;
+    height: 100px !important;
+}
+
+
+/* 실제 영역 */
+#board-info {
+    position: absolute;
+    top: calc(-100px + -10px);
+    left: -178px;
+
+    width: 1070px;
+    height: 100px;
+
+    padding: 0;
+    margin-bottom: 0;
+
+    background: transparent;
+    border: 0;
+
+    display: flex;
+    align-content: space-between;
+    justify-content: space-between;
+}
+
+/* 연결된 개체 위치 회복 */
+#main > div.row {
+    margin-top: calc(100px + 10px);
+}
+
+
+
+/* :::::::::: :::::::::: 프로필바 - 왼쪽 정보 :::::::::: :::::::::: */
+
+/* 영역 🟢⚪⚫*/
+#board-info h1,
+html.darkmode #board-info h1 {
+    width: 180px;
+    height: 100%;
+    padding: 0;
+
+    background: var(--color-sig);
+    border: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3px;
+}
+
+
+/* 흔게더 메인 페이지 버튼 */
+#board-info h1 > a {
+	width: fit-content;
+	font-size: 0;
+	color: #fff;
+}
+
+#board-info h1 > a:before {
+    content: "\f015";
+    font-family: "fontawesome";
+    font-size: 32px;
+}
+
+#board-info h1 > a:after {
+	content: '';
+	
+	font-family: "Pretendard Variable";
+	letter-spacing: -0.04em;
+    font-weight: 600;
+    font-size: 14px;
+
+    opacity: 0;
+}
+
+#board-info h1 > a:hover:after {
+    content: ' 흔게더 메인으로';
+
+    opacity: 1;
+    transition: .2s ease-in-out;
+}
+
+/* 접속자 수 사이드 문구 */
+#board-info #viewers-area #viewers:before {
+    content: '반짝이는 별 ';
+}
+
+#board-info #viewers-area #viewers:after {
+    content: '개';
+}
+
+
+/* 랭킹 & 접속자 수 */
+#board-info #viewers-area,
+#board-info #score-area {
+    width: fit-content;
+    padding: 0 5px;
+    padding-right: 7px;
+
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+
+    background: var(--color-noti);
+    color: var(--color-sig);
+    opacity: .9;
+    border-radius: 10px;
+}
+
+/* 접속자 수 이미지 변경 (별 모양) */
+.fa-user:before {
+    content: "\f005";
+}
+
+
+/* 스트리머 이미지 */
+#board-info > img#board-info-profile-img {
+    display: none;
+}
+
+
+/* :::::::::: :::::::::: 프로필바 - 오른쪽 버튼 :::::::::: :::::::::: */
+
+/* 영역 */
+#board-info-bottom {
+    display: grid;
+    grid-template-columns: 23px 23px 23px 23px;
+    grid-template-rows: minmax(auto, auto) minmax(auto, auto);
+    column-gap: 15px;
+
+    align-items: end;
+    justify-items: start;
+    justify-content: end;
+    align-content: space-evenly;
+
+    width: 180px;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    background: var(--color-sig);
+}
+
+
+/* 버튼 */
+#board-info #board-info-bottom a,
+html.darkmode #board-info #board-info-bottom a {
+    color: #fff;
+	font-size: 0px;
+    height: fit-content;
+}
+
+#board-info > #board-info-bottom > a:hover {
+    transform: scale(1.15);
+}
+
+#board-info-bottom > a:nth-child(n) {
+    text-align: center;
+    border: none !important;
+    padding: 0 !important;
+}
+
+#board-info-bottom > a:nth-child(n) > i {
+    text-align: center;
+	font-size: 18px;
+}
+
+#board-info-bottom > a:nth-child(5) {
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+
+
+/* :::::::::: :::::::::: :::::::::: :::::::::: 에디터 :::::::::: :::::::::: :::::::::: :::::::::: */
+
+/* :::::::::: :::::::::: 공통 에디터 기능 :::::::::: :::::::::: */
+
+.fr-popup,
+.fr-toolbar.fr-top,
+html.darkmode .fr-popup,
+html.darkmode .fr-toolbar.fr-top {
+    border: 0 !important;
+    border-top: 4px solid var(--color-sig) !important;
+    border-radius: 0;
+
+    padding-top: 2px;
+
+    box-shadow: none;
+    background: var(--color-noti) !important;
+}
+
+
+/* 토글 버튼 - 비활성 🟢⚪⚫ */
+.fr-toolbar .fr-command.fr-btn, 
+.fr-popup .fr-command.fr-btn {
+	color: var(--color-sig);
+}
+
+html.darkmode .fr-toolbar .fr-command.fr-btn, 
+html.darkmode .fr-popup .fr-command.fr-btn {
+	color: var(--color-sig);
+}
+
+
+/* 토글 버튼 - 비활성 접촉 🟢⚪⚫ */
+.fr-desktop .fr-command:hover, 
+.fr-desktop .fr-command:focus, 
+.fr-desktop .fr-command.fr-btn-hover, 
+.fr-desktop .fr-command.fr-expanded {
+	background: transparent;
+	color: var(--color-eda);
+}
+
+html.darkmode .fr-desktop .fr-command:hover, 
+html.darkmode .fr-desktop .fr-command:focus, 
+html.darkmode .fr-desktop .fr-command.fr-btn-hover, 
+html.darkmode .fr-desktop .fr-command.fr-expanded {
+	background: transparent;
+	color: var(--color-eda) !important ;
+}
+
+
+/* 토글 버튼 - 활성 접촉 🟢⚪ */
+.fr-desktop .fr-command.fr-active:hover, 
+.fr-desktop .fr-command.fr-active:focus, 
+.fr-desktop .fr-command.fr-active.fr-btn-hover, 
+.fr-desktop .fr-command.fr-active.fr-expanded {
+	background: transparent;
+}
+
+
+/* 드롭다운 버튼 - 비활성 🟢⚪ */
+.fr-toolbar .fr-command.fr-btn.fr-dropdown::after, 
+.fr-popup .fr-command.fr-btn.fr-dropdown::after {
+	border-top-color: var(--color-sig) !important;
+}
+
+
+/* 드롭다운 버튼 - 비활성 접촉 🟢⚪⚫ */
+.fr-toolbar .fr-command.fr-btn.fr-dropdown:hover, 
+.fr-popup .fr-command.fr-btn.fr-dropdown:hover, 
+.fr-toolbar .fr-command.fr-btn.fr-dropdown:focus, 
+.fr-popup .fr-command.fr-btn.fr-dropdown:focus {
+	color: var(--color-eda) !important;
+}
+
+.fr-toolbar .fr-command.fr-btn.fr-dropdown:hover::after, 
+.fr-popup .fr-command.fr-btn.fr-dropdown:hover::after, 
+.fr-toolbar .fr-command.fr-btn.fr-dropdown:focus::after, 
+.fr-popup .fr-command.fr-btn.fr-dropdown:focus::after {
+	border-top-color: var(--color-eda) !important;
+}
+
+html.darkmode .fr-toolbar .fr-command.fr-btn.fr-dropdown:hover, 
+html.darkmode .fr-popup .fr-command.fr-btn.fr-dropdown:hover, 
+html.darkmode .fr-toolbar .fr-command.fr-btn.fr-dropdown:focus, 
+html.darkmode .fr-popup .fr-command.fr-btn.fr-dropdown:focus {
+	color: var(--color-eda) !important;
+}
+
+html.darkmode .fr-toolbar .fr-command.fr-btn.fr-dropdown:hover::after, 
+html.darkmode .fr-popup .fr-command.fr-btn.fr-dropdown:hover::after, 
+html.darkmode .fr-toolbar .fr-command.fr-btn.fr-dropdown:focus::after, 
+html.darkmode .fr-popup .fr-command.fr-btn.fr-dropdown:focus::after {
+	border-top-color: var(--color-eda) !important;
+}
+
+/* 드롭다운 버튼 - 접촉 (분리형) 🟢⚪⚫ */
+.fr-command.fr-btn.fr-options.fr-btn-hover,
+.fr-command.fr-btn.fr-options:hover,
+.fr-command.fr-btn.fr-options:focus {
+    border-left: none;
+}
+
+.fr-command.fr-btn.fr-options.fr-btn-hover::after,
+.fr-command.fr-btn.fr-options:hover::after,
+.fr-command.fr-btn.fr-options:focus::after {
+    border-top-color: var(--color-eda) !important;
+}
+
+html.darkmode .fr-command.fr-btn.fr-options.fr-btn-hover,
+html.darkmode .fr-command.fr-btn.fr-options:hover,
+html.darkmode .fr-command.fr-btn.fr-options:focus {
+    border-left: none;
+}
+
+html.darkmode .fr-command.fr-btn.fr-options.fr-btn-hover::after,
+html.darkmode .fr-command.fr-btn.fr-options:hover::after,
+html.darkmode .fr-command.fr-btn.fr-options:focus::after {
+    border-top-color: var(--color-eda) !important;
+}
+
+
+/* 드롭다운 버튼 - 활성 🟢⚪⚫ */
+.fr-toolbar .fr-command.fr-btn.fr-dropdown.fr-active, 
+.fr-popup .fr-command.fr-btn.fr-dropdown.fr-active {
+	color: var(--color-eda);
+	background: transparent;
+}
+
+.fr-toolbar .fr-command.fr-btn.fr-dropdown.fr-active::after, 
+.fr-popup .fr-command.fr-btn.fr-dropdown.fr-active::after, 
+.fr-toolbar .fr-command.fr-btn.fr-dropdown.fr-active::after, 
+.fr-popup .fr-command.fr-btn.fr-dropdown.fr-active::after {
+	border-top-color: var(--color-eda) !important;
+}
+
+.fr-toolbar .fr-command.fr-btn.fr-active, 
+.fr-popup .fr-command.fr-btn.fr-active {
+	color: var(--color-eda);
+}
+
+html.darkmode .fr-toolbar .fr-command.fr-btn.fr-dropdown.fr-active, 
+html.darkmode .fr-popup .fr-command.fr-btn.fr-dropdown.fr-active {
+	color: var(--color-eda);
+	background: transparent;
+}
+
+html.darkmode .fr-toolbar .fr-command.fr-btn.fr-dropdown.fr-active::after, 
+html.darkmode .fr-popup .fr-command.fr-btn.fr-dropdown.fr-active::after, 
+html.darkmode .fr-toolbar .fr-command.fr-btn.fr-dropdown.fr-active::after, 
+html.darkmode .fr-popup .fr-command.fr-btn.fr-dropdown.fr-active::after {
+	border-top-color: var(--color-eda) !important;
+}
+
+html.darkmode .fr-toolbar .fr-command.fr-btn.fr-active, 
+html.darkmode .fr-popup .fr-command.fr-btn.fr-active {
+	color: var(--color-eda);
+}
+
+
+/* 드롭다운 버튼 - 활성 접촉 🟢⚪ */
+.fr-toolbar .fr-command.fr-btn.fr-dropdown.fr-active:hover, 
+.fr-popup .fr-command.fr-btn.fr-dropdown.fr-active:hover, 
+.fr-toolbar .fr-command.fr-btn.fr-dropdown.fr-active:focus, 
+.fr-popup .fr-command.fr-btn.fr-dropdown.fr-active:focus {
+	color: var(--color-eda) !important;
+	background: transparent !important;
+}
+
+.fr-toolbar .fr-command.fr-btn.fr-dropdown.fr-active:hover::after, 
+.fr-popup .fr-command.fr-btn.fr-dropdown.fr-active:hover::after, 
+.fr-toolbar .fr-command.fr-btn.fr-dropdown.fr-active:focus::after, 
+.fr-popup .fr-command.fr-btn.fr-dropdown.fr-active:focus::after {
+	border-top-color: var(--color-eda) !important;
+}
+
+
+/* 드롭다운 내부 - 활성 🟢⚪ */
+.fr-command.fr-btn+.fr-dropdown-menu .fr-dropdown-wrapper 
+.fr-dropdown-content ul.fr-dropdown-list li a.fr-active {
+	color: var(--color-eda);
+	background: transparent;
+}
+
+
+/* 기능 구분 바 🟢⚪⚫ */
+.fr-separator,
+html.darkmode .fr-separator {
+    background: var(--color-sig);
+}
+
+
+/* 기능 팝업 창 🟢⚪⚫ */
+.fr-popup .fr-buttons,
+html.darkmode .fr-popup .fr-buttons {
+    box-shadow: none;
+    border-bottom: 1px solid var(--color-sig)
+}
+
+
+/* 기능 입력창 🟢⚪⚫ */
+.fr-popup .fr-input-line input[type=text],
+.fr-popup .fr-input-line textarea,
+html.darkmode .fr-popup .fr-input-line input[type=text],
+html.darkmode .fr-popup .fr-input-line textarea {
+    border-color: var(--color-sig);
+}
+
+html.darkmode .fr-popup .fr-input-line input[type=text]:focus, 
+html.darkmode .fr-popup .fr-input-line textarea:focus {
+	border-color: var(--color-eda)
+}
+
+.fr-popup .fr-input-line input[type=text]::placeholder,
+.fr-popup .fr-input-line textarea::placeholder {
+    color: var(--color-pla) !important;
+}
+
+.fr-popup .fr-action-buttons button.fr-command {
+    background: transparent !important;
+    color: var(--color-sig);
+}
+
+/* 입력창 활성화 라벨 🟢⚪⚫ */
+.fr-popup .fr-input-line input + label,
+.fr-popup .fr-input-line textarea + label,
+html.darkmode .fr-popup .fr-input-line input + label,
+html.darkmode .fr-popup .fr-input-line textarea + label {
+    background: transparent;
+}
+
+/* 입력창 활성화 라벨 포커스 🟢⚫ */
+html.darkmode .fr-popup .fr-input-line input.fr-not-empty:focus+label, 
+html.darkmode .fr-popup .fr-input-line textarea.fr-not-empty:focus+label {
+	color: var(--color-eda);
+}
+
+/* 입력창 활성화 라벨 비포커스 🟢⚫ */
+html.darkmode .fr-popup .fr-input-line input.fr-not-empty+label, 
+html.darkmode .fr-popup .fr-input-line textarea.fr-not-empty+label {
+	color: gray;
+}
+
+
+/* 팝업창 화살표 🟢⚪⚫ */
+.fr-popup .fr-arrow,
+html.darkmode .fr-popup .fr-arrow {
+    border-bottom-color: var(--color-sig);
+}
+
+
+/* 이모티콘 선택 GUI 🟢⚪⚫ */
+.fr-popup .fr-emoticon {
+    width: fit-content;
+	height: 20px;
+	line-height: 0px;
+	padding: 3px;
+}
+
+.fr-popup .fr-emoticon:hover {
+	background: var(--color-pla);
+}
+
+html.darkmode .fr-popup .fr-emoticon:hover {
+	background: var(--color-pla);
+}
+
+
+/* 색 선택 GUI 🟢⚪⚫ */
+.fr-popup .fr-colors-tabs {
+	box-shadow: none;
+}
+
+html.darkmode .fr-popup .fr-colors-tabs .fr-colors-tab.fr-selected-tab {
+	color: var(--color-eda)
+}
+
+.fr-popup .fr-color-hex-layer .fr-action-buttons button.fr-command {
+	color: var(--color-sig) !important;
+}
+
+.fr-popup .fr-color-hex-layer .fr-action-buttons button.fr-command:hover,
+.fr-popup .fr-color-hex-layer .fr-action-buttons button.fr-command:focus {
+	color: var(--color-eda) !important;
+}
+
+
+/* 표 삽입 GUI 테두리 🟢⚪ */
+.fr-popup .fr-table-size .fr-select-table-size > span > span {
+    border-color: var(--color-pla);
+}
+
+/* 표 삽입 GUI 끝 열 여백 🟢⚪*/
+.fr-popup .fr-table-size .fr-select-table-size > span[data-col='10'] {
+	padding-right: 0;
+}
+
+/* 이미지 삽입 GUI 🟢⚪ */
+.fr-popup .fr-image-upload-layer {
+	background: var(--color-hot)
+}
+
+.fr-popup .fr-image-upload-layer:hover {
+	background: var(--color-hov)
+}
+
+
+
+/* 작성 폼 🟢⚪⚫ */
+.fr-box.fr-basic.fr-top .fr-wrapper,
+#articleWriteForm div.fr-wrapper,
+.fr-box.fr-code-view textarea.fr-code,
+html.darkmode .fr-box.fr-basic.fr-top .fr-wrapper,
+html.darkmode #articleWriteForm div.fr-wrapper,
+html.darkmode .fr-box.fr-code-view textarea.fr-code {
+    box-shadow: inset 0 0 0 2px var(--color-noti);
+    border-radius: 0;
+	border: 0;
+}
+
+
+
+
+
+/* :::::::::: :::::::::: 본문 에디터 전용 :::::::::: :::::::::: */
+
+/* 에디터 설명 */
+.frame > h3 {
+    height: 30px;
+
+    display: flex;
+    justify-content: center;
+
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.frame > h3:nth-child(1) {
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 30px;
+    text-align: center;
+
+    height: 100%;
+
+    color: var(--color-sig);
+}
+
+.frame > h3:nth-child(1):before,
+.frame > h3:nth-child(1):after {
+	margin: 0 10px;
+    content: '━━━━━━━━━━━━━━━━━━━━━━';
+    font-size: 20px;
+    letter-spacing: -0.04em;
+}
+
+
+/* 입력 폼 공통 */
+.form-control {
+    border-radius: 0px;
+    box-shadow: none;
+}
+
+.form-control:focus,
+html.darkmode .form-control:focus {
+    box-shadow: none;
+}
+
+.form-control::placeholder {
+    color: var(--color-pla) !important;
+}
+
+
+/* 글 기본 설정 폼 */
+#articleWriteForm div.row.mt-2 {
+    margin: 0;
+    margin-top: .5em;
+    margin-bottom: 0em;
+}
+
+
+/* 게시판 선택 폼 */
+#articleWriteForm div.col-xs-2.left {
+    padding: 0;
+    padding-right: 0.25em
+}
+
+#articleWriteForm select[name=category_id] {
+    background: var(--color-noti);
+    border: 0;
+    font-weight: 600;
+
+    appearance: none;
+    border-top: 2px solid var(--color-sig);
+}
+
+
+/* 제목 폼 */
+#articleWriteForm div.col-xs-10.right {
+    padding: 0;
+    padding-left: 0.25em;
+}
+
+#title {
+    border-radius: 0px;
+    box-shadow: none;
+
+    background: var(--color-noti);
+    border: 0;
+    border-top: 2px solid var(--color-sig);
+}
+
+
+/* 글 작성 세부 설정 디자인 */
+#articleWriteForm div.mt-2 {
+    background: var(--color-noti);
+}
+
+#articleWriteForm div.mt-2 > .opt:first-child {
+    font-weight: 600;
+    padding: 0 10px;
+    background: var(--color-sig);
+    color: #fff;
+}
+
+/* 디자인 예외 */
+#articleWriteForm div.row.mt-2 {
+    background: var(--color-fr);
+}
+
+#articleWriteForm > div.mt-2.action--btn {
+    background: var(--color-fr);
+    margin-top: 1.5em;
+}
+
+
+/* 제목 색상 선택 영역 */
+#articleWriteForm label.ml-2.mr-2.opt {
+    width: 120px !important;
+}
+
+#title_color > input {
+    text-align: center;
+    border: 0;
+    border-radius: 0;
+    border: solid var(--color-sig);
+    border-width: 4px 0 1px 1px;
+}
+
+#title_color > span {
+    border: 0;
+    border-radius: 0;
+    border: 1px solid var(--color-sig);
+    line-height: 16px;
+    padding: 5px 6px;
+}
+
+
+/* 뱃지 선택 영역 */
+a.custom-badge-link {
+    border: 2px solid transparent;
+    padding: 0px 4.3px 1px 4.5px;
+    margin: 0 3px;
+}
+
+a.custom-badge-link.active {
+    border-color: var(--color-sig);
+    background: var(--color-sig);
+}
+
+a.custom-badge-link:hover {
+    background: transparent;
+    border: 2px solid var(--color-sig);
+    transition: 0.4s;
+}
+
+
+/* 쓰기 버튼 */
+#article-write-button {
+    height: 34px;
+}
+
+
+/* 작성취소 버튼 */
+#articleWriteForm > div.mt-2.action--btn > a {
+    height: 34px;
+
+    background-color: var(--color-sigr) !important;
+    border-color: var(--color-sigr) !important;
+}
+
+#articleWriteForm > div.mt-2.action--btn > a:before {
+    font-family: "FontAwesome";
+    content: "\f1f8  ";
+    font-size: 14px;
+}
+
+#articleWriteForm > div.mt-2.action--btn > a:hover,
+#articleWriteForm > div.mt-2.action--btn > a:focus {
+    background-color: var(--color-fr) !important;
+    border-color: var(--color-sigr) !important;
+    color: var(--color-sigr) !important;
+}
+
+
+/* :::::::::: :::::::::: 댓글 에디터 전용 :::::::::: :::::::::: */
+
+/* 비밀 댓글 박스 🟢⚪ */
+#comment-write-button-area > label {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+
+    background: var(--color-sig);
+    color: #fff;
+
+    width: fit-content;
+    height: 30px;
+
+    padding: 5px 10px;
+    margin: 0;
+    margin-right: 3px;
+
+    font-weight: 400;
+    font-size: 12px;
+    text-align: center;
+    line-height: 30px;
+}
+
+#comment-write-button-area > label:after {
+    content: "로";
+}
+
+#secret {
+    margin: 0 0 0 4px;
+    order: 1;
+}
+
+#comment-write-button-area > label > i {
+    display: none;
+}
+
+
+
+
+/* :::::::::: :::::::::: :::::::::: :::::::::: 푸터 :::::::::: :::::::::: :::::::::: :::::::::: */
+
+/* 푸터 영역 🟢⚪ */
+footer {
+    display: grid;
+    grid-template-rows: minmax(auto, auto) minmax(auto, auto) 1fr;
+    grid-template-columns: 1fr minmax(auto, auto) minmax(auto, auto) 1fr;
+    column-gap: 10px;
+
+    margin-top: 4em;
+    padding: 30px 0;
+
+    background: var(--color-sigk);
+}
+
+
+/* CSS 정보 🟢⚪ */
+footer:before {
+    content: 'Custom CSS for 해까닥여울이  I  Designed by 제이엘__';
+
+    grid-row: 1 / 2;
+    grid-column: 2 / 4;
+
+    align-self: end;
+    justify-self: end;
+
+    padding: 0 20px;
+
+    font-weight: 600;
+    letter-spacing: -0.04em;
+    white-space: pre;
+
+    color: #fff;
+}
+
+
+/* CSS 제작 정보 🟢⚪ */
+footer:after {
+    content: 'Custom CSS for 해까닥여울이  I  Designed by 제이엘__';
+
+    grid-row: 2 / 3;
+    grid-column: 2 / 4;
+
+    align-self: start;
+    justify-self: end;
+
+    padding: 0 20px 0;
+
+    font-size: 12px;
+    letter-spacing: -0.04em;
+    white-space: pre;
+
+    color: #b3b3b3;
+}
+
+/* 푸터 기능 박스 🟢⚪ */
+footer .container {
+    /* 외부 그리드 */
+    grid-row: 3 / 4;
+    grid-column: 2 / 4;
+
+    width: 1070px;
+
+    margin-top: 10px;
+    padding: 20px 20px 0;
+
+    border-top: 2px solid #fff;
+
+    /* 내부 그리드*/
+    display: grid;
+    grid-template-rows: minmax(auto, auto) minmax(auto, auto) [row-end];
+    grid-template-columns: minmax(auto, auto) 1fr;
+    column-gap: 8px;
+    row-gap: 1px;
+}
+
+
+/* 트게더 정보 🟢⚪ */
+footer .container > span,
+html.darkmode footer .container > span {
+    grid-row: 1 / row-end;
+    grid-column: 3 / 4;
+
+    align-self: center;
+    justify-self: end;
+
+    text-align: end;
+
+    color: #b3b3b3;
+}
+
+footer .container > span > a[href] {
+    font-weight: 600;
+    color: #fff;
+}
+
+
+/* 라이트/다크 모드 전환 버튼 제목 🟢⚪ */
+footer .container:before {
+    content: '색상 모드 전환하기';
+
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+
+    align-self: end;
+    justify-self: start;
+
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+    white-space: pre;
+
+    color: #fff;
+}
+
+
+/* 라이트/다크 모드 전환 버튼 설명 🟢⚪ */
+footer .container:after {
+    content: '달 버튼을 클릭해 모드를 넘나들 수 있어요';
+
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+
+    align-self: start;
+    justify-self: start;
+
+    font-size: 12px;
+    letter-spacing: -0.05em;
+    white-space: pre;
+
+    color: #b3b3b3;
+}
+
+
+/* 모드 전환 버튼 영역 🟢⚪ */
+#theme_btn_box {
+    grid-row: 1 / row-end;
+    grid-column: 1 / 2;
+
+    align-self: center;
+    justify-self: start;
+
+    padding: 0 !important;
+    margin: 0;
+    position: relative;
+
+    display: flex;
+    width: 50px !important;
+    height: 50px !important;
+
+    background: none !important;
+    border: 0;
+}
+
+
+/* 모드 전환 달 버튼 🟢⚪ */
+.theme_btn_box .theme_btn {
+    background: none;
+    width: 50px !important;
+    height: 50px !important;
+
+    border: 0 !important;
+    transition: all .5s ease-in-out !important;
+    padding: 0;
+
+    z-index: 5;
+
+    box-shadow: inset 25px 0px 0px 0px var(--color-sigy);
+
+}
+
+/* 모드 전환 달 버튼 🟢⚫ */
+html.darkmode .theme_btn_box .theme_btn {
+    background: none;
+
+    box-shadow: inset -10px 0px 0px 0px #fff;
+}
+
+/* 달 뒷바탕 🟢⚪ */
+.theme_btn_box:before {
+    content: '';
+
+    width: 50px;
+    height: 50px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    background: #000;
+    border: 0;
+    border-radius: 100px;
+}
+
+
+/* 모바일 버전 전환 버튼 🟢⚪ */
+#switch-platform-link {
+    font-size: 0;
+    text-decoration-line: none !important;
+}
+
+#switch-platform-link:before {
+    content: '\f2d2';
+
+    font-family: 'fontawesome';
+    font-size: 14px;
+    font-weight: 400;
+
+    margin-right: 4px;
+}
+
+#switch-platform-link:after {
+    content: '모바일 뷰로 전환하기';
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#switch-platform-link:hover:after {
+    text-decoration-line: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
