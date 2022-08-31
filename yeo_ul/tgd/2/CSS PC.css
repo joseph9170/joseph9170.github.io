@@ -65,7 +65,8 @@ tr a[href]:before {
 
 /* 전역 설정 */
 :root {
-    --url-banner: url(https://static-cdn.jtvnw.net/jtv_user_pictures/d02fc610-4d53-4886-a76b-f90bffa444e0-profile_image-300x300.png); /* 배너 */
+    --url-banner: url(https://cdn.discordapp.com/attachments/936953394415935568/992465070565113906/banner_basic_modified.png); /* 배너 */
+
     --url-pfbar: url(https://cdn.discordapp.com/attachments/901132816996249601/936308122518163526/pfbar_basic.png); /* 프로필바 배너 : 1 2 */
     --url-fulnoti: url(https://cdn.discordapp.com/attachments/901132816996249601/936675189096337499/darknoti.png); /* 풀사이즈형 공지 */
     --url-hgdlogo: url(https://cdn.discordapp.com/attachments/936953394415935568/983031726773239818/logo_line.svg); /* 흔게더 로고 */
