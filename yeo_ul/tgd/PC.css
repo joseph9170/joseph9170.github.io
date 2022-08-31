@@ -28,7 +28,7 @@
 
 
 
-/* 디스코드 버튼 :::::::::: :::::::::: :::::::::: */
+/* 카카오 버튼 :::::::::: :::::::::: :::::::::: */
 
 @keyframes shake {
 	0% { transform: translate(0, 0); }
@@ -82,7 +82,7 @@
 }
 
 #kakaobtn-text::before {
-	content: '디스코드로 ';
+	content: '카카오톡으로 ';
 }
 
 @media (max-width: 1600px) {
