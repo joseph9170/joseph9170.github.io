@@ -1,0 +1,279 @@
+/* 상단 공지바 :::::::::: :::::::::: :::::::::: */
+
+#noti-top{
+	display: none;
+	
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+	letter-spacing: -0.05em;
+
+    background: #F46160;
+    color: #fff;
+
+    padding: 5px 0;
+}
+
+#noti-top::before,
+#noti-top::after {
+	content: '\f071';
+	font-size: 16px;
+	font-weight: normal;
+
+	padding: 2px;
+	
+	display: inline;
+	vertical-align: middle;
+}
+
+
+
+/* 디스코드 버튼 :::::::::: :::::::::: :::::::::: */
+
+@keyframes shake {
+	0% { transform: translate(0, 0); }
+	100% { transform: translate(0, -4px); }
+}
+
+#discord-btn {
+	position: fixed;
+	z-index: 999;
+	bottom: 20px;
+	right: 20px;
+	animation: shake 1.5s infinite cubic-bezier(0.65, 0.05, 0.36, 1) alternate;
+}
+
+#discord-btn a {
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	
+	padding: 15px;
+	border-radius: 50px 50px 0px 50px;
+	
+	background: #5865F2;
+	color: #fff;
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
+	transition: .2s ease-in-out;
+}
+
+#discord-btn a:link {
+	color: #fff !important;
+	text-decoration: none;
+}
+
+#discord-btn a:hover,
+#discord-btn a:focus {
+	background: #EB459E;
+}
+
+#disbtn-img {
+	height: 22px;
+	margin-right: 6px;
+}
+
+#disbtn-text {
+	font-size: 17px;
+	font-weight: 800;
+	line-height: 20px;
+
+	white-space: nowrap;
+}
+
+#disbtn-text::before {
+	content: '디스코드로 ';
+}
+
+@media (max-width: 1600px) {
+
+	#disbtn-text::before {
+		content: '';
+	}
+
+}
+
+@media (max-width: 1400px) {
+
+	#discord-btn a {
+		padding: 15px 12px;
+	}
+
+	#disbtn-img {
+		margin: 0;
+	}
+	
+	#disbtn-text {
+		display: none;
+	}
+
+}
+
+
+
+
+/* 유용한 링크 :::::::::: :::::::::: :::::::::: */
+
+:root {
+	--color-text : #000;
+	--color-btn-cft: #B3AF88; /* 분할 보색 */
+	--color-btn-important: #ABADB3; /* 보색 */
+}
+
+:root.darkmode {
+	--color-text : #fff;
+	--color-btn-cft: #CCC89B;
+	--color-btn-important: #C4C6CC;
+}
+
+
+/* 프레임 */
+#useful-link {
+    width: calc(1070px - 180px * 2);
+	height: 100px;
+
+	background: var(--color-sig);
+	padding: 5px 0;
+
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 100;
+
+	display: grid;
+    	grid-template-columns: repeat(6, 1fr); /* 가로 */
+    	grid-template-rows: 32px 16px 32px ; /* 세로 */
+		align-items: stretch;
+		gap: 5px;
+
+}
+
+
+/* 제목 */
+#uflink-header {
+	background: transparent;
+	border: 2px solid #fff;
+	color: #fff;
+
+    font-size: 17px;
+	letter-spacing: -0.05em;
+    font-weight: 800;
+    
+    display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+
+	grid-column: 5 / 7;
+    grid-row: 1 / 2;
+}
+
+
+/* 버튼 */
+.uflink-btn {
+    background: var(--color-noti);
+	color: var(--color-text);
+
+	letter-spacing: -0.05em;
+	text-decoration: none !important;
+
+	font-size: 15px;
+	font-weight: 600;
+	line-height: 15px;
+
+	display: flex;
+		align-items: center;
+		justify-content: center;
+}
+
+html.darkmode .uflink-btn {
+	color: #fff;
+}
+
+.uflink-btn:hover,
+.uflink-btn:focus {
+	background: var(--color-sig) !important;
+	border: 1px dashed #fff;
+	color: #fff !important;
+}
+
+
+/* 버튼 - 빠른 CFT */
+.btn-cft {
+	background: var(--color-btn-cft);
+	color: #000;
+
+	font-weight: 700;
+    
+    display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		gap: 4px;
+
+	grid-row: 1 / 3;
+}
+
+#cft-faq::before {
+    content: '\f135';
+	font-size: 18px;
+	line-height: 18px;
+	font-weight: normal;
+}
+
+#cft-key::before {
+    content: '\f084';
+	font-size: 18px;
+	line-height: 18px;
+	font-weight: normal;
+}
+
+
+/* 버튼 - 큰 사이즈 */
+#uflink-large {
+    grid-column: 3 / 7;
+    grid-row: 2 / 4;
+    
+    display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		gap: 5px;
+}
+
+.btn-large {
+    flex-direction: column;
+    gap: 3px;
+}
+
+.btn-large-discription {
+    font-size: 11px;
+	line-height: 11px;
+	font-weight: normal;
+    
+	background: var(--color-pla);
+	color: #fff;
+
+	margin: 0;
+	padding: 2px 6px;
+	border-radius: 20px;
+}
+
+
+/* 버튼 - 중요 */
+#uflink-important {
+    grid-column: 3 / 5;
+    
+    display: grid;
+		grid-template-columns: 2.5fr 1fr;
+		gap: 5px;
+}
+
+.btn-important {
+    background: var(--color-btn-important);
+}
+
+
+/* 버튼 - 다크 모드 특수 */
+html.darkmode .btn-cft,
+html.darkmode .btn-important {
+	color: #000;
+}
