@@ -2365,7 +2365,7 @@ footer {
 
 /* CSS 정보 🟢⚪ */
 footer:before {
-    content: 'Custom CSS for Yeohun  I  Modified by 제이엘__';
+    content: 'Custom CSS for Yeo_Ul  I  Modified by 제이엘__';
 
     grid-row: 1 / 2;
     grid-column: 2 / 4;
@@ -2750,7 +2750,7 @@ header #header-bar > .row:before {
 
 /* CSS 정보 */
 footer:before {
-    content: 'Custom CSS for Yeohun : Modified  ·  by 제이엘__';
+    content: 'Custom CSS for Yeo_Ul : Modified  ·  by 제이엘__';
 }
 
 /* CSS 제작 정보 */
@@ -3037,12 +3037,4 @@ html.darkmode #article-info > h2 > span[style="color:#a3a3a3"] {
 #article-list>.article-list-row>.item>.list-title>small.favo:after {
     content: '\f058'; /* 가이드 */
 }
-
-
-
-
-
-
-
-
 
