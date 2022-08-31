@@ -28,14 +28,14 @@
 
 
 
-/* 카카오톡 버튼 :::::::::: :::::::::: :::::::::: */
+/* 디스코드 버튼 :::::::::: :::::::::: :::::::::: */
 
 @keyframes shake {
 	0% { transform: translate(0, 0); }
 	100% { transform: translate(0, -4px); }
 }
 
-#kakao-btn {
+#discord-btn {
 	position: fixed;
 	z-index: 999;
 	bottom: 20px;
@@ -43,7 +43,7 @@
 	animation: shake 1.5s infinite cubic-bezier(0.65, 0.05, 0.36, 1) alternate;
 }
 
-#kakao-btn a {
+#discord-btn a {
 	display: flex;
 	align-items: center;
 	flex-direction: row;
@@ -58,22 +58,22 @@
 	transition: .2s ease-in-out;
 }
 
-#kakao-btn a:link {
+#discord-btn a:link {
 	color: #fff !important;
 	text-decoration: none;
 }
 
-#kakao-btn a:hover,
-#kakao-btn a:focus {
+#discord-btn a:hover,
+#discord-btn a:focus {
 	background: #EB459E;
 }
 
-#kakaobtn-img {
+#disbtn-img {
 	height: 22px;
 	margin-right: 6px;
 }
 
-#kakaobtn-text {
+#disbtn-text {
 	font-size: 17px;
 	font-weight: 800;
 	line-height: 20px;
@@ -81,13 +81,13 @@
 	white-space: nowrap;
 }
 
-#kakaobtn-text::before {
-	content: '카카오톡으로 ';
+#disbtn-text::before {
+	content: '디스코드로 ';
 }
 
 @media (max-width: 1600px) {
 
-	#kakaobtn-text::before {
+	#disbtn-text::before {
 		content: '';
 	}
 
@@ -95,15 +95,15 @@
 
 @media (max-width: 1400px) {
 
-	#kakao-btn a {
+	#discord-btn a {
 		padding: 15px 12px;
 	}
 
-	#kakaobtn-img {
+	#disbtn-img {
 		margin: 0;
 	}
 	
-	#kakaobtn-text {
+	#disbtn-text {
 		display: none;
 	}
 
