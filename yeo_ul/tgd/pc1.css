@@ -2367,7 +2367,7 @@ footer {
 
 /* CSS 정보 🟢⚪ */
 footer:before {
-    content: 'Custom CSS for 해까닥여울이  I  Designed by 제이엘__';
+    content: 'Custom CSS for 해까닥여울이  ***  Designed by 제이엘__';
 
     grid-row: 1 / 2;
     grid-column: 2 / 4;
@@ -2387,7 +2387,7 @@ footer:before {
 
 /* CSS 제작 정보 🟢⚪ */
 footer:after {
-    content: 'Custom CSS for 해까닥여울이  I  Designed by 제이엘__';
+    content: 'Custom CSS for 해까닥여울이  ***  Designed by 제이엘__';
 
     grid-row: 2 / 3;
     grid-column: 2 / 4;
