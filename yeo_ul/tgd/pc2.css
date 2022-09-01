@@ -174,12 +174,12 @@ header #header-bar > .row:before {
 
 /* CSS 정보 */
 footer:before {
-    content: 'Custom CSS for 해까닥여울이  I  Designed by 제이엘__';
+    content: 'Custom CSS for 해까닥여울이  ***  Designed by 제이엘__';
 }
 
 /* CSS 제작 정보 */
 footer:after {
-    content: 'Custom CSS for 해까닥여울이  I  Designed by 제이엘__';
+    content: 'Custom CSS for 해까닥여울이  ***  Designed by 제이엘__';
 }
 
 
