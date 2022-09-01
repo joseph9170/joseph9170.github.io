@@ -1,3 +1,48 @@
+/* '트게더로고' '트게더 검색창' */
+
+/* 기존 트게더 로고 이미지 숨기기 */
+
+header .row>div:nth-child(1)>a>img {
+
+    display: none;
+
+    filter: grayscale(100%);
+
+    opacity: 0.8;
+
+}
+
+/* 트게더 로고 이미지 변경 */
+
+header .row>div:nth-child(1)>a {
+
+    display: block;
+
+    width: 290px;
+
+    height: 89px;
+
+    background: url(https://developkim.github.io/yeo_ul_css/img/logo.png) no-repeat 20px 0;
+
+    background-size: auto 100px; /* 왼쪽 상단 여게더 배너 이미지 크기 100px -> 따로 조정가능 */
+
+}
+
+body > header > div:nth-child(1) > div > div.col-xs-4 {
+
+    left: -50px;
+
+}
+
+
+
+
+
+
+
+
+
+
 /* 상단 공지바 :::::::::: :::::::::: :::::::::: */
 
 #noti-top{
