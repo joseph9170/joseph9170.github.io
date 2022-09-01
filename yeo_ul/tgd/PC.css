@@ -236,7 +236,7 @@ html.darkmode .uflink-btn {
 }
 
 #cft-tiktok::before {
-    content: '\e07b';
+    /*content: '\e07b';*/
 	font-size: 18px;
 	line-height: 18px;
 	font-weight: normal;
