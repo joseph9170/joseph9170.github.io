@@ -222,7 +222,7 @@ html.darkmode .uflink-btn {
 }
 
 #cft-key::before {
-    content: '\f084';
+    content: '\f073';
 	font-size: 18px;
 	line-height: 18px;
 	font-weight: normal;
