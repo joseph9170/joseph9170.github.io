@@ -358,7 +358,7 @@ html.darkmode #article-info > h2 > span[style="color:#484848"] {
 	color: var(--color-cate-cxft) !important;
 	border-color: var(--color-cate-cxft) !important;
 }
-
+ 
 /* CTFT */
 #article-list .article-list-row .category[style="color:#5b5b5b"]:before,
 #article-info > h2 > span[style="color:#5b5b5b"]:before,
