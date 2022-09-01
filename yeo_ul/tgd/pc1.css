@@ -440,7 +440,8 @@ header #header-bar > .row {
 /* 로고 🟢⚪ */
 header #header-bar > .row:before {
     content: '';
-    background: var(--url-hgdlogo) no-repeat;
+    /* background: var(--url-hgdlogo) no-repeat; */
+    background: url(https://static-cdn.jtvnw.net/jtv_user_pictures/d02fc610-4d53-4886-a76b-f90bffa444e0-profile_image-300x300.png); /* 배너 */
     background-size: auto 30px;
     background-position: left center;
     width: 100%;
