@@ -228,6 +228,13 @@ html.darkmode .uflink-btn {
 	font-weight: normal;
 }
 
+#cft-community::before {
+    content: '\f16d';
+	font-size: 18px;
+	line-height: 18px;
+	font-weight: normal;
+}
+
 
 /* 버튼 - 큰 사이즈 */
 #uflink-large {
