@@ -307,8 +307,11 @@ body > header:before {
 /* 로고 */
 header .row > div:nth-child(1) > a > img {
     content: url(https://developkim.github.io/yeo_ul_css/img/logo.png);
-    width: 25px;
-    height: 25px;
+    width: 250px;
+    height: 65px;
+    position: fixed;
+    z-index: 999;
+    top: 10px;
 }
 
 body > header > div:nth-child(1) > div > div.col-xs-4,
@@ -441,11 +444,14 @@ header #header-bar > .row {
 header #header-bar > .row:before {
     content: '';
     /* background: var(--url-hgdlogo) no-repeat; */
-    background: url(https://static-cdn.jtvnw.net/jtv_user_pictures/d02fc610-4d53-4886-a76b-f90bffa444e0-profile_image-300x300.png); /* 배너 */
+    /* 배너 */
+	/*
+	background: url(https://static-cdn.jtvnw.net/jtv_user_pictures/d02fc610-4d53-4886-a76b-f90bffa444e0-profile_image-300x300.png); 
     background-size: auto 30px;
     background-position: left center;
     background-repeat: no-repeat;
     width: 100%;
+	*/
 }
 
 
