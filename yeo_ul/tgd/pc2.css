@@ -152,7 +152,7 @@ header::after {
 
 /* 로고 */
 header #header-bar > .row:before {
-	filter: brightness(100);
+	/* filter: brightness(100); */
 }
 
 
