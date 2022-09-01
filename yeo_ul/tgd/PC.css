@@ -235,6 +235,14 @@ html.darkmode .uflink-btn {
 	font-weight: normal;
 }
 
+#cft-tiktok::before {
+    content: '\e07b';
+	font-size: 18px;
+	line-height: 18px;
+	font-weight: normal;
+}
+
+
 
 /* 버튼 - 큰 사이즈 */
 #uflink-large {
