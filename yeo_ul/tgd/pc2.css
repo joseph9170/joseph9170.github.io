@@ -139,7 +139,8 @@ header::after {
 	content: '';
 
 	background: var(--url-hgdlogo) no-repeat;
-	background-size: auto 80px;
+	/* background-size: auto 80px; */
+	background-size: cover;
 	background-position: center center;
 
 	width: 100%;
