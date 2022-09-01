@@ -306,7 +306,7 @@ body > header:before {
 
 /* 로고 */
 header .row > div:nth-child(1) > a > img {
-    content: url(https://cdn.discordapp.com/attachments/962442000802668676/1001838809115263067/logo2.png);
+    content: url(https://developkim.github.io/yeo_ul_css/img/logo.png);
     width: 25px;
     height: 25px;
 }
