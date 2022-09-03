@@ -138,10 +138,11 @@ body > header {
 header::after {
 	content: '';
 
-	background: var(--url-hgdlogo) no-repeat;
+	/* background: var(--url-hgdlogo) no-repeat; */
 	/* background-size: auto 80px; */
-	background-size: cover;
-	background-position: center center;
+	background: var(--url-hgdlogo);
+	background-size: 1100px;
+	/* background-position: center center; */
 
 	width: 100%;
 	height: calc(290px - 40px - 45px);
