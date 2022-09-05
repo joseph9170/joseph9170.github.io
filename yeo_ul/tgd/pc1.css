@@ -611,6 +611,10 @@ body > header {
 }
 
 
+#main-content > div > div:nth-child(2):not(#article-list) {
+display:none;	
+}
+
 /* 메뉴 헤더 🟢⚪⚫ */
 #main .menu-wrapper > .header,
 html.darkmode #main .menu-wrapper > .header {
