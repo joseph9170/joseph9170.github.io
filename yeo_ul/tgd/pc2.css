@@ -31,7 +31,7 @@ td em strong {
 	background: var(--color-hig);
     font-weight: 600;
 }
-
+ 
 
 /* 하이퍼링크 아이콘 */
 p a[href]:before {
