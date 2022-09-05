@@ -30,12 +30,12 @@ html.darkmode #article-list>.article-list-row.notice {
 
 
 
-html.darkmode list-category {
+html.darkmode .category[style] {
   color: white !important;
 }
 
 
 
-html.darkmode .list-category {
+html.darkmode category[style] {
   color: white !important;
 }
