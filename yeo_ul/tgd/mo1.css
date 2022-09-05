@@ -37,12 +37,10 @@ html.darkmode .category[style] {
   color: white !important;
 }
 
-
-
-html.darkmode category[style] {
+html.darkmode .list-time {
   color: white !important;
 }
-
+ 
 
 #movetotop  {
   bottom: 110px !important;
