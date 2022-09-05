@@ -175,9 +175,10 @@ html.darkmode body:before {
 */
 
 /* 관리자 뱃지 전환 🟢⚪ */
-img[src="https://static-cdn.jtvnw.net/badges/v1/3267646d-33f0-4b17-b3df-f923a41db1d0/1"] {
+/* img[src="https://static-cdn.jtvnw.net/badges/v1/3267646d-33f0-4b17-b3df-f923a41db1d0/1"] {
     content: url(https://cdn.discordapp.com/attachments/659060387718758401/666644717219348480/1.5.png);
     width: 18px;
+*/
 }
 
 
@@ -865,7 +866,7 @@ html.darkmode #article-list > .article-list-row.notice {
 
 #article-list > .article-list-row.notice > .item > .list-title > small.comment-count,
 #article-list > .article-list-row.notice > .item > .list-title > .list-writer {
-    display: none;
+    /* display: none; */
 }
 
 #article-list > .article-list-row.notice > .item > .list-checkbox,
@@ -879,6 +880,7 @@ html.darkmode #article-list > .article-list-row.notice {
 
 #article-list > .article-list-row.notice > .item > .list-title {
     padding: 5px 0;
+    width: 880px;
 }
 
 
