@@ -18,6 +18,10 @@ header>#header-area>a>h1 {
   color: purple!important;
 }
 
+#article-list>.article-list-row.notice {
+    background-color: #dddd;
+}
+
 
 html.darkmode #article-list>.article-list-row>.item>a.list-title>.list-writer {
   color: white !important;
