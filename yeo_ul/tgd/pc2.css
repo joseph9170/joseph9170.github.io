@@ -111,13 +111,15 @@ html.darkmode {
 
 /* 글 목록 뱃지 제거 */
 .list-writer img {
-	display: none;
+	/* display: none; */
 }
 
 /* 스트리머 뱃지 커스텀 */
 img[title="Broadcaster"] {
+	/*
 	content: url(https://cdn.discordapp.com/attachments/936953394415935568/1006923454139863180/snow_badge.svg);
 	filter: grayscale(1);
+	*/
 }
 
 
