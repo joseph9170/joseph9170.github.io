@@ -1,0 +1,7 @@
+body > ad-shield-inventory {
+  display: none !important;
+}
+
+#header-top-notice {
+  display: none !important;
+}
