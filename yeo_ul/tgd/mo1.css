@@ -24,6 +24,11 @@ background: url(https://developkim.github.io/yeo_ul_css/img/logo.png) no-repeat 
     background-color: #dddd !important;
 }
 
+html.darkmode #article-list>.article-list-row.notice {
+  background-color: darkblue !important;
+}
+
+
 
 html.darkmode list-category {
   color: white !important;
