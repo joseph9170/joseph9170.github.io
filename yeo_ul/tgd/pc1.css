@@ -1383,12 +1383,10 @@ html.darkmode #article-content-wrapper > .vote-area {
 
 
 
-
-//*[@id="article-content-wrapper"]/div[3]/button[2] {
-	display: none;
+ 
+.btn-outline-primary {
+display: none
 }
-
-
 
 
 
