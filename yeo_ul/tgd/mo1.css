@@ -15,11 +15,11 @@ header>#header-area>a>h1 {
 
 #article-list>.article-list-row>.item>a.list-title:visited
 {
-  color: purple!important;
+  color: purple !important;
 }
 
 #article-list>.article-list-row.notice {
-    background-color: #dddd;
+    background-color: #dddd !important;
 }
 
 
