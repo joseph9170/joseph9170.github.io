@@ -42,3 +42,8 @@ html.darkmode .category[style] {
 html.darkmode category[style] {
   color: white !important;
 }
+
+
+#movetotop  {
+  bottom: 110px !important;
+}
