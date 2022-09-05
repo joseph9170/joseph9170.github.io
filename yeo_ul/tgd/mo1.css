@@ -28,3 +28,9 @@ background: url(https://developkim.github.io/yeo_ul_css/img/logo.png) no-repeat 
 html.darkmode list-category {
   color: white !important;
 }
+
+
+
+html.darkmode .list-category {
+  color: white !important;
+}
