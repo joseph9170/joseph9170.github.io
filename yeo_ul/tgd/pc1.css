@@ -1382,9 +1382,15 @@ html.darkmode #article-content-wrapper > .vote-area {
 }
 
 
-#article-content-wrapper > div.vote-area > button.btn.btn-outline-primary.vote-btn > i {
-display: none;
+
+
+//*[@id="article-content-wrapper"]/div[3]/button[2] {
+	display: none;
 }
+
+
+
+
 
 #article-content-wrapper > div.vote-area > button > i {
     font-size: 22px !important;
