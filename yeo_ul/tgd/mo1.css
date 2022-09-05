@@ -9,6 +9,7 @@ body > ad-shield-inventory {
 
 header>#header-area>a>h1 {  
       background: url(https://developkim.github.io/yeo_ul_css/img/logo.png) no-repeat !important;
+      background-size: 100% 100%;
 }
 
 
