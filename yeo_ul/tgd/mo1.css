@@ -7,7 +7,12 @@ body > ad-shield-inventory {
 }
 
 
-header>#header-area>a>h1 {
-  
+header>#header-area>a>h1 {  
       background: url(https://developkim.github.io/yeo_ul_css/img/logo.png) no-repeat !important;
+}
+
+
+#article-list>.article-list-row>.item>a.list-title:visited
+{
+  color: purple!important
 }
