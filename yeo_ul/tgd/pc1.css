@@ -749,7 +749,7 @@ html.darkmode #article-list > div:nth-child(3):not(#article-list>.article-list-r
 
 /* 읽은 글 색상 */
 #article-list > .article-list-row > .item > .list-title > a:visited {
-    color: #acacac !important;
+    color: #000 !important;
 }
 
 
