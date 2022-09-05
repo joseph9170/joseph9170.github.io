@@ -1385,7 +1385,7 @@ html.darkmode #article-content-wrapper > .vote-area {
 
  
 .btn-outline-primary {
-display: none
+display: none !important;
 }
 
 
