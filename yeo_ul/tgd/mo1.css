@@ -45,3 +45,8 @@ html.darkmode .list-time {
 #movetotop  {
   bottom: 110px !important;
 }
+
+
+#main-content > div > div:nth-child(11) {
+  display: none !important;
+}
