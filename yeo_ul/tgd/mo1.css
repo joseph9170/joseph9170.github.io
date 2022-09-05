@@ -28,6 +28,9 @@ html.darkmode #article-list>.article-list-row.notice {
   background-color: darkblue !important;
 }
 
+html.darkmode.mb #article-list>div:nth-child(3) {
+  background-color: darkblue !important;
+}
 
 
 html.darkmode .category[style] {
