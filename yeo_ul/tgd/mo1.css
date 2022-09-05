@@ -25,11 +25,6 @@ background: url(https://developkim.github.io/yeo_ul_css/img/logo.png) no-repeat 
 }
 
 
-html.darkmode #article-list>.article-list-row>.item>a.list-title>.list-writer {
-  color: white !important;
-}
-
-
-html.darkmode #article-list-row > div > a > div > div {
+html.darkmode list-category {
   color: white !important;
 }
