@@ -17,7 +17,7 @@ background: url(https://developkim.github.io/yeo_ul_css/img/logo.png) no-repeat 
 
 #article-list>.article-list-row>.item>a.list-title:visited
 {
-  color: purple !important;
+  color: #800080  !important;
 }
 
 #article-list>.article-list-row.notice {
@@ -25,11 +25,11 @@ background: url(https://developkim.github.io/yeo_ul_css/img/logo.png) no-repeat 
 }
 
 html.darkmode #article-list>.article-list-row.notice {
-  background-color: darkblue !important;
+  background-color: #00008b !important;
 }
 
 html.darkmode.mb #article-list>div:nth-child(3) {
-  background-color: darkblue !important;
+  background-color: #00008b !important;
 }
 
 
