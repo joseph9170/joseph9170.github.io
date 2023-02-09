@@ -87,7 +87,7 @@
 	line-height: 20px;
 	height: 900px;
 
-	white-space: nowrap;
+	
 }
 
 #kakaobtn-text::before {
@@ -113,7 +113,7 @@
 	}
 	
 	#kakaobtn-text {
-		display: none;
+		
 	}
 
 }
